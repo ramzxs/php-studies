@@ -38,7 +38,7 @@
 
                         // Method 2
                         // strtotime('+1 day 2023-08-25')
-                        echo date('Y-m-d', strtotime('+'.$_GET['inputDays'].' day '.$_GET['inputDate']));
+                        echo date('F j, Y', strtotime('+'.$_GET['inputDays'].' day '.$_GET['inputDate']));
                         ?>
                     </td>
                 </tr>

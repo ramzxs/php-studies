@@ -18,6 +18,10 @@
     </style>
 </head>
 <body>
+    <h1>PHP STUDIES</h1>
+    <a href=".">Home</a> | <a href="formprocessing.php">Form Processing</a>
+    <hr>
+
     <!-- HTML Comment -->
     <h1>PHP Basics</h1>
 
@@ -49,7 +53,7 @@
     <h2>Area Calculator</h2>
     <?php
     // Identifier = Variable naems
-    $l = 10.5; 
+    $l = 10.5; // form input
     $w  = 7.25;
     $area   = $l * $w;
     echo 'Length: ' . $l . '<br>';
@@ -135,6 +139,8 @@
     echo getDateToday() . '<br>'; // Function call
 
 
+    // $var1
+    // func
     function printCapitalized($str) {
         echo strtoupper($str);
     }

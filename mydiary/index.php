@@ -8,6 +8,7 @@
 <body>
     <h1>My Diary</h1>
 
+    <h2>Create New Diary Entry</h2>
     <form action="?" method="post">
         <table border="1" cellpadding="4" cellspacing="0">
             <tr>
@@ -45,5 +46,19 @@
         echo "File written.";
     }
     ?>
+
+
+    <h2>LIST</h2>
+    <ol>
+        <?php
+        $entries = scandir('entries/');
+        for ($i = 0; $i < count($entries); $i++) {
+            if ($entries[$i] != '.' && $entries[$i] != '..'){ ?>
+                <li>
+                    <a href="entries/<?= $entries[$i] ?>"><?= $entries[$i] ?></a>
+                </li> <?php
+            }
+        } ?>
+    </ol>
 </body>
 </html>

@@ -24,26 +24,7 @@
                             value="<?php echo (isset($_GET['inputDays'])) ? $_GET['inputDays'] : 1; ?>">
                 </td>
             </tr>
-            <?php
-            if (isset($_GET['inputDate'])) { ?>
-                <tr>
-                    <td>Result:</td>
-                    <td style="font-size: large; font-weight: bold;">
-                        <?php
-                        // Method 1
-                        // $dateToday = new DateTime($_GET['inputDate']);
-                        // $dateInterval = new DateInterval('P'.$_GET['inputDays']. 'D');
-                        // $result = date_add($dateToday, $dateInterval);
-                        // echo $result->format('Y-m-d');
-
-                        // Method 2
-                        // strtotime('+1 day 2023-08-25')
-                        echo date('F j, Y', strtotime('+'.$_GET['inputDays'].' day '.$_GET['inputDate']));
-                        ?>
-                    </td>
-                </tr>
-                <?php
-            } ?>
+            <?php doAdd(); ?>
             <tr>
                 <td></td>
                 <td>
@@ -54,3 +35,27 @@
     </form>
 </body>
 </html>
+
+<?php
+function doAdd() {
+    if (isset($_GET['inputDate'])) { ?>
+        <tr>
+            <td>Result:</td>
+            <td style="font-size: large; font-weight: bold;">
+                <?php
+                // Method 1
+                // $dateToday = new DateTime($_GET['inputDate']);
+                // $dateInterval = new DateInterval('P'.$_GET['inputDays']. 'D');
+                // $result = date_add($dateToday, $dateInterval);
+                // echo $result->format('Y-m-d');
+
+                // Method 2
+                // strtotime('+1 day 2023-08-25')
+                echo date('F j, Y', strtotime('+'.$_GET['inputDays'].' day '.$_GET['inputDate']));
+                ?>
+            </td>
+        </tr>
+        <?php
+    }
+
+}

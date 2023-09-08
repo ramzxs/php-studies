@@ -35,13 +35,21 @@
     <?php
     /*
     LEARNING A PROGRAMMING LANGUAGE TRACK
+
+    BASIC - LANGUAGE
     1. Comment
     2. Display Output
     3. Variables & Operators
     4. Control Flow
     5. Looping
     6. Functions/Methods
-    7. Data Structures - Arrays, Tree, Heap, Graph 
+    
+    ADVANCED
+    7. Data Structures - Arrays, Tree, Heap, Graph
+    8. File Handling - Open file, write file, create directory, list files
+    9. Databse Integration - MySQL Server connection,
+            List records from table
+            Insert, update and delete a record
     */
     
     // Single-line comment
@@ -88,6 +96,9 @@
 
     <h2>Control Flow</h2>
     <?php
+    /* == != <= >= */
+    /* AND &&;;;   OR ||  */
+
     $grade = 44;
     echo "Grade = " . $grade . "<br>";
     echo "Grade Remark = ";
@@ -97,7 +108,7 @@
     100 - 75     = Good
     50 - 74      = Passing
     49 and Below = Failed    */
-    if ($grade >= 75 && $grade <= 100) {
+    if ($grade >= 75 && $grade <= 100) {  // 101
         echo "Good";
         $alert = false;
     } elseif ($grade >= 50 && $grade <= 74) {
@@ -125,7 +136,7 @@
     <br>
     <?php
     // do, while, for
-    for ($i = 1; $i <= 15; $i++) {  // initialization, checking, run, updating
+    for ($i = 1; $i <= 13; $i++) {  // initialization, checking, run, updating
         echo $i . ' ';
     }
     // 123...1415

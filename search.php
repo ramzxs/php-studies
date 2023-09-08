@@ -14,20 +14,13 @@
         <input name="searchQuery" type="search" width="100" required value="<?php
         // Tertiary Operator ?:
         echo (isset($_POST['searchQuery'])) ? $_POST['searchQuery'] : "";
-
-        /* if (isset($_POST['searchQuery'])) {
-            echo $_POST['searchQuery'];
-        } else {
-            echo "";
-        } */
         ?>">
         <button type="submit">Search</button>
     </form>
     <br>
 
     <?php
-    if (isset($_POST['searchQuery'])) {
-        ?>
+    if (isset($_POST['searchQuery'])) { ?>
 
         <div>
             <h2>RESULTS</h2>
@@ -39,6 +32,7 @@
                 // PHP - MySQL/MariaDB
                 // mysql, mysqli, pdo (PHP Data Objects)
                 try {
+                    // Object Oriented Programming (OOP)
                     $DBCONN = new PDO('mysql:host=localhost;dbname=myapp_db', 'root', '');
 
                     // search A
@@ -47,10 +41,10 @@
                     // %A% = Apple, Banana
                     // %A = Banana
                     $sql = "SELECT * FROM product
-                    WHERE (
-                        `name` LIKE '%" . $_POST['searchQuery'] . "%'
-                        OR `desc` LIKE '%" . $_POST['searchQuery'] . "%'
-                    )";
+                        WHERE (
+                            `name` LIKE '%" . $_POST['searchQuery'] . "%'
+                            OR `desc` LIKE '%" . $_POST['searchQuery'] . "%'
+                        )";
                     // echo $sql.'<br><br>';
                     $stmt = $DBCONN->query($sql);
 
